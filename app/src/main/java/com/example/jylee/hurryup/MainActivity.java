@@ -83,7 +83,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        String info = data.getStringExtra("info");
-        whereInfo[requestCode].setText(info);
+        try {
+            String info = data.getStringExtra("info");
+            whereInfo[requestCode].setText(info);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 }

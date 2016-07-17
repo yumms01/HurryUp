@@ -9,22 +9,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".SearchHelperActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="지도 넣기"
-        android:id="@+id/textView4"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
     <EditText
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
-        android:layout_marginBottom="65dp"
-        android:layout_above="@+id/textView4"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/btn_departure" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -32,12 +23,11 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="값 읽어오기"
         android:id="@+id/textView"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/editText"
-        android:layout_marginBottom="83dp"
-        android:layout_alignEnd="@+id/editText"
         android:textStyle="bold"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:layout_above="@+id/btn_departure"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="160dp"
@@ -47,5 +37,12 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
+
+    <com.skp.Tmap.TMapView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map"
+        android:layout_below="@+id/editText"
+        android:layout_above="@+id/textView" />
 
 </RelativeLayout>

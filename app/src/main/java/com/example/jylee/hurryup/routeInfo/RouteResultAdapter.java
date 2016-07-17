@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by jylee on 2016-07-13.
  */
-public class RouteResultAdapter extends BaseAdapter {
+public class RouteResultAdapter extends BaseAdapter implements RouteResultView.OnImageClickListener{
     List<RouteData> items = new ArrayList<RouteData>();
 
     public void add (RouteData d) {
@@ -43,12 +43,12 @@ public class RouteResultAdapter extends BaseAdapter {
 
         if(convertView == null) {
             view = new RouteResultView(parent.getContext());
+            view.setOnImageClickListener(this);
         } else {
             view = (RouteResultView)convertView;
         }
 
         view.setData(items.get(position));
-
         return view;
     }
 
@@ -62,4 +62,11 @@ public class RouteResultAdapter extends BaseAdapter {
         mAdapterListener = listener;
     }
 
+    @Override
+    public void onImageClick(RouteResultView view, RouteData data) {
+        if (mAdapterListener != null) {
+            int index = items.indexOf(data);
+            mAdapterListener.onAdapterItemClickListener(this, view, data, index);
+        }
+    }
 }

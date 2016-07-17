@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jylee.hurryup">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,7 +27,6 @@
             android:launchMode="singleTask" />
         <activity android:name=".routeInfo.RouteResultActivity" />
         <activity android:name=".SearchHelperActivity" />
-        <activity android:name=".SearchDestinationActivity" />
         <activity android:name=".DetailRouteInfoActivity"></activity>
     </application>
 
